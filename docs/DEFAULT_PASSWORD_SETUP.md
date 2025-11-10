@@ -4,7 +4,7 @@
 
 Este sistema implementa:
 
-- Criação de usuários com senha padrão `Lavinsky@1234`
+- Criação de usuários com senha padrão `Demo@2024!`
 - Troca obrigatória de senha no primeiro login
 - Validação de senha forte
 - Redirecionamento automático via middleware
@@ -17,7 +17,7 @@ Este sistema implementa:
 ```
 1. Admin cria novo usuário
    ↓
-2. Usuário criado com senha: Lavinsky@1234
+2. Usuário criado com senha: Demo@2024!
    ↓
 3. Flag force_password_change = true
    ↓
@@ -58,7 +58,7 @@ Adicione no seu arquivo `.env.local`:
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 
 # Senha padrão para novos usuários
-DEFAULT_USER_PASSWORD=Lavinsky@1234
+DEFAULT_USER_PASSWORD=Demo@2024!
 ```
 
 **⚠️ IMPORTANTE**: O `SUPABASE_SERVICE_ROLE_KEY` é diferente da `ANON_KEY`:
@@ -102,15 +102,15 @@ Componentes criados:
 1. Admin acessa `/dashboard/users`
 2. Clica em "Novo Usuário"
 3. Preenche o formulário
-4. Sistema cria usuário com senha `Lavinsky@1234`
-5. Toast mostra: "User created successfully with default password: Lavinsky@1234"
+4. Sistema cria usuário com senha `Demo@2024!`
+5. Toast mostra: "User created successfully with default password: Demo@2024!"
 
 ### Primeiro Login do Usuário
 
 1. Usuário faz login com:
 
    - Email: seu-email@exemplo.com
-   - Senha: Lavinsky@1234
+   - Senha: Demo@2024!
 
 2. Sistema detecta `force_password_change = true`
 
@@ -134,12 +134,12 @@ Componentes criados:
 
 3. Digita seu email e clica em "Resetar Senha"
 
-4. Sistema reseta a senha para `Lavinsky@1234` e define `force_password_change = true`
+4. Sistema reseta a senha para `Demo@2024!` e define `force_password_change = true`
 
 5. Usuário vê mensagem de sucesso com instruções:
 
    - Voltar para o login
-   - Usar senha padrão: `Lavinsky@1234`
+   - Usar senha padrão: `Demo@2024!`
    - Será redirecionado para criar nova senha
 
 6. Usuário faz login com senha padrão
@@ -406,7 +406,7 @@ Client
 
    ```
    Email: teste@exemplo.com
-   Senha: Lavinsky@1234
+   Senha: Demo@2024!
    ```
 
 4. **Verificar redirecionamento** para `/change-password`
@@ -429,7 +429,7 @@ Client
 
 4. **Verificar mensagem de sucesso** com instruções
 
-5. **Voltar para login** e usar senha padrão `Lavinsky@1234`
+5. **Voltar para login** e usar senha padrão `Demo@2024!`
 
 6. **Verificar redirecionamento** para `/change-password`
 

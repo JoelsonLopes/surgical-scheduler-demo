@@ -8,7 +8,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Sistema de Gestão do Bloco Cirúrgico
           </h1>
-          <p className="text-xl text-muted-foreground">Clínica Lavinsky</p>
+          <p className="text-xl text-muted-foreground">SurgiScheduler Demo</p>
         </div>
 
         <div className="space-y-2 text-muted-foreground">
@@ -27,7 +27,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/docs/prd-lavinsky-bloco-cirugico.md"
+            href="/docs/prd-surgical-scheduler-demo.md"
             className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
           >
             Documentação
@@ -62,7 +62,7 @@ export default function Home() {
 
       <footer className="py-6 text-center text-sm text-muted-foreground">
         <p>
-          © {new Date().getFullYear()} Clínica Lavinsky. Todos os direitos
+          © {new Date().getFullYear()} SurgiScheduler Demo. Todos os direitos
           reservados.
         </p>
       </footer>

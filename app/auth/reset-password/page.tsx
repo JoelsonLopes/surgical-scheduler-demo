@@ -53,7 +53,7 @@ export default function RecuperarSenhaPage() {
       setPasswordReset(true)
       setSuccessMessage(data.message)
       toast.success('Senha resetada com sucesso!', {
-        description: 'Faça login com a senha padrão: Lavinsky@1234',
+        description: 'Faça login com a senha padrão: Demo@2024!',
       })
     } catch (error) {
       console.error('Erro inesperado:', error)
@@ -159,7 +159,7 @@ export default function RecuperarSenhaPage() {
                       <span>
                         Use a senha padrão:{' '}
                         <strong className="text-foreground">
-                          Lavinsky@1234
+                          Demo@2024!
                         </strong>
                       </span>
                     </li>

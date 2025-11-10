@@ -47,7 +47,7 @@ describe('useUserActions', () => {
       json: async () => ({
         user: mockUser,
         message:
-          'User created successfully with default password: Lavinsky@1234',
+          'User created successfully with default password: Demo@2024!',
       }),
     })
 

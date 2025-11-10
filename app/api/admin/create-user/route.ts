@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
-const defaultPassword = process.env.DEFAULT_USER_PASSWORD || 'Lavinsky@1234'
+const defaultPassword = process.env.DEFAULT_USER_PASSWORD || 'Demo@2024!'
 
 // Create Supabase Admin client with service role key
 const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {

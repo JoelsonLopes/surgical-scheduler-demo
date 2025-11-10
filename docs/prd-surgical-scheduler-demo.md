@@ -1,7 +1,7 @@
-PRD – Sistema de Gestão e Agendamento do Bloco Cirúrgico Clínica Lavinsky
+PRD – Sistema de Gestão e Agendamento do Bloco Cirúrgico SurgiScheduler Demo
 🎯 Visão Geral
 Objetivo
-Desenvolver um sistema web que permita a gestão eficiente do bloco cirúrgico da Clínica Lavinsky, proporcionando aos médicos a funcionalidade de solicitação e acompanhamento de reservas, enquanto entrega aos administradores o controle completo sobre o fluxo de agendamentos. O sistema será seguro, escalável, responsivo e com alta performance, atendendo normas de compliance como LGPD/HIPAA.
+Desenvolver um sistema web que permita a gestão eficiente do bloco cirúrgico da SurgiScheduler Demo, proporcionando aos médicos a funcionalidade de solicitação e acompanhamento de reservas, enquanto entrega aos administradores o controle completo sobre o fluxo de agendamentos. O sistema será seguro, escalável, responsivo e com alta performance, atendendo normas de compliance como LGPD/HIPAA.
 
 Principais Valores
 Performance: Resposta inferior a 200ms para operações críticas.

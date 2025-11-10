@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 
 export const metadata: Metadata = {
-  title: 'Dashboard - Clínica Lavinsky',
+  title: 'Dashboard - SurgiScheduler Demo',
   description: 'Sistema de Gestão do Bloco Cirúrgico',
 }
 

@@ -53,7 +53,7 @@ Para produção, configure um serviço SMTP profissional:
    - `Project Settings` > `Auth` > `SMTP Settings`
    - **Enable Custom SMTP**: ON
    - **Sender Email**: seu-email@gmail.com
-   - **Sender Name**: Bloco Cirúrgico Lavinsky
+   - **Sender Name**: SurgiScheduler Demo
    - **Host**: smtp.gmail.com
    - **Port Number**: 587
    - **Username**: seu-email@gmail.com
@@ -85,7 +85,7 @@ Para produção, configure um serviço SMTP profissional:
    - **Username**: apikey (literal)
    - **Password**: [API Key copiada]
    - **Sender Email**: noreply@seudominio.com
-   - **Sender Name**: Bloco Cirúrgico Lavinsky
+   - **Sender Name**: SurgiScheduler Demo
 
 #### AWS SES (Alta escala)
 
@@ -155,13 +155,13 @@ Após configurar, teste o reset de senha:
 <p>Olá,</p>
 <p>
   Você solicitou a redefinição de senha para sua conta no Sistema de Bloco
-  Cirúrgico Lavinsky.
+  SurgiScheduler Demo.
 </p>
 <p>Clique no link abaixo para criar uma nova senha:</p>
 <p><a href="{{ .ConfirmationURL }}">Redefinir Senha</a></p>
 <p>Este link expira em 60 minutos.</p>
 <p>Se você não solicitou esta redefinição, ignore este email.</p>
-<p>Atenciosamente,<br />Equipe Bloco Cirúrgico Lavinsky</p>
+<p>Atenciosamente,<br />Equipe SurgiScheduler Demo</p>
 ```
 
 ### Variáveis Disponíveis

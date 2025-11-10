@@ -1,6 +1,6 @@
 # Documentação da Estrutura do Projeto
 
-## Sistema de Gestão do Bloco Cirúrgico - Clínica Lavinsky
+## Sistema de Gestão do Bloco Cirúrgico - SurgiScheduler Demo
 
 **Versão:** 1.0.0
 **Data:** 13 de Outubro de 2025
@@ -25,7 +25,7 @@
 
 ## 🎯 Visão Geral
 
-Sistema web para gestão e agendamento do bloco cirúrgico da Clínica Lavinsky, desenvolvido com foco em:
+Sistema web para gestão e agendamento do bloco cirúrgico da SurgiScheduler Demo, desenvolvido com foco em:
 
 - **Performance**: Respostas em menos de 200ms para operações críticas
 - **Segurança**: Conformidade com LGPD e HIPAA
@@ -73,7 +73,7 @@ Sistema web para gestão e agendamento do bloco cirúrgico da Clínica Lavinsky,
 ## 📁 Estrutura de Pastas
 
 ```
-lavinsky-bloco-cirugico/
+surgical-scheduler-demo/
 │
 ├── app/                          # Next.js App Router
 │   ├── auth/                     # Páginas de autenticação
@@ -108,7 +108,7 @@ lavinsky-bloco-cirugico/
 ├── hooks/                      # React Hooks customizados
 │
 ├── public/                     # Arquivos estáticos
-│   ├── logo-lavinsky.jpg      # Logo da clínica
+│   ├── demo-logo.svg      # Demo logo
 │   └── favicon.svg
 │
 ├── docs/                       # Documentação do projeto
@@ -342,7 +342,7 @@ Arquivo: `next.config.ts`
 
 Arquivo: `tailwind.config.ts`
 
-- Tema personalizado para Clínica Lavinsky
+- Tema personalizado para SurgiScheduler Demo
 - Cores: primary, secondary, destructive, etc.
 - Breakpoints responsivos
 - Plugins: tailwindcss-animate
@@ -636,14 +636,14 @@ npm update
 
 Para problemas ou dúvidas:
 
-- **Email**: suporte@clinicalavinsky.com.br
+- **Email**: suporte@demo.surgischeduler.app
 - **Issues**: GitHub Repository Issues
 
 ---
 
 ## 📄 Licença
 
-© 2025 Clínica Lavinsky. Todos os direitos reservados.
+© 2025 SurgiScheduler Demo. Todos os direitos reservados.
 
 Sistema proprietário - Uso restrito e confidencial.
 

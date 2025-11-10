@@ -136,14 +136,14 @@ describe('LoginPage Component', () => {
   it('should display company information', () => {
     render(<LoginPage />)
 
-    expect(screen.getByText(/Clínica Lavinsky/)).toBeInTheDocument()
+    expect(screen.getByText(/SurgiScheduler Demo/)).toBeInTheDocument()
     expect(screen.getByText(/LGPD\/HIPAA/)).toBeInTheDocument()
   })
 
   it('should render logo image', () => {
     render(<LoginPage />)
 
-    const logo = screen.getByAltText('Clínica Lavinsky')
+    const logo = screen.getByAltText('SurgiScheduler Demo')
     expect(logo).toBeInTheDocument()
   })
 })

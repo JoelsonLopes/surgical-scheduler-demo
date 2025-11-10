@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Clínica Lavinsky',
+  title: 'SurgiScheduler Demo',
   description:
-    'Sistema web para gestão e agendamento do bloco cirúrgico da Clínica Lavinsky',
+    'Sistema web para gestão e agendamento do bloco cirúrgico da SurgiScheduler Demo',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',

@@ -1,5 +1,5 @@
 // ============================================
-// Database Types - Lavinsky Bloco Cirúrgico
+// Database Types - SurgiScheduler Demo
 // Auto-generated from Supabase schema
 // ============================================
 

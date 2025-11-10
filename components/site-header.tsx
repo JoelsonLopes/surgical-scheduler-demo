@@ -43,7 +43,7 @@ export function SiteHeader({ breadcrumbs }: SiteHeaderProps) {
         <div className="flex items-center gap-2">
           <DemoLogo variant="compact" />
           <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold">Clínica Lavinsky</span>
+            <span className="text-sm font-semibold">SurgiScheduler Demo</span>
             <span className="text-xs text-muted-foreground">
               Bloco Cirúrgico
             </span>
