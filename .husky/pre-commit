@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "🚀 Running pre-commit hooks..."
+
+# Run lint-staged for staged files
+echo "🔧 Running lint-staged on staged files..."
+npx lint-staged
+
+if [ $? -ne 0 ]; then
+  echo "❌ Pre-commit checks failed! Fix the issues above before committing."
+  exit 1
+fi
+
+echo "✅ Pre-commit checks passed!"
