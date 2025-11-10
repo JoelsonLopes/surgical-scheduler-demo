@@ -11,6 +11,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import Image from 'next/image'
+import { DemoLogo } from '@/components/DemoLogo'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -70,16 +71,7 @@ export default function RecuperarSenhaPage() {
       <div className="w-full max-w-md space-y-8">
         {/* Logo */}
         <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="relative h-24 w-full overflow-hidden rounded-lg">
-            <Image
-              src="/logo-lavinsky.jpg"
-              alt="Clínica Lavinsky"
-              fill
-              sizes="(max-width: 768px) 100vw, 448px"
-              className="w-full rounded-lg"
-              priority
-            />
-          </div>
+        <DemoLogo />
           <div className="text-center">
             <h1 className="text-2xl font-bold text-foreground">
               Sistema de Gestão do Bloco Cirúrgico
@@ -110,7 +102,7 @@ export default function RecuperarSenhaPage() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="seu.email@clinicalavinsky.com.br"
+                    placeholder="seu.email@demo.surgischeduler.app"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -206,7 +198,7 @@ export default function RecuperarSenhaPage() {
         {/* Footer */}
         <div className="text-center text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Clínica Lavinsky. Todos os direitos
+            © {new Date().getFullYear()} SurgiScheduler Demo. Todos os direitos
             reservados.
           </p>
           <p className="mt-1">

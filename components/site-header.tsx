@@ -1,7 +1,7 @@
 'use client'
 
 import { PanelLeft } from 'lucide-react'
-import Image from 'next/image'
+import { DemoLogo } from "@/components/DemoLogo"
 
 import {
   Breadcrumb,
@@ -41,15 +41,7 @@ export function SiteHeader({ breadcrumbs }: SiteHeaderProps) {
 
         {/* Logo e nome - visível em todas as telas */}
         <div className="flex items-center gap-2">
-          <div className="flex size-8 items-center justify-center">
-            <Image
-              src="/logo-header.png"
-              alt="Clínica Lavinsky"
-              width={32}
-              height={32}
-              className="rounded-lg"
-            />
-          </div>
+          <DemoLogo variant="compact" />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold">Clínica Lavinsky</span>
             <span className="text-xs text-muted-foreground">

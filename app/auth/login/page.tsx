@@ -12,10 +12,10 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { createClient } from '@/lib/supabase/client'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
+import { DemoLogo } from '@/components/DemoLogo'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -86,25 +86,11 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 p-4">
       <div className="w-full max-w-md space-y-8">
         {/* Logo */}
-        <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="relative h-24 w-full overflow-hidden rounded-lg">
-            <Image
-              src="/logo-lavinsky.jpg"
-              alt="Clínica Lavinsky"
-              fill
-              sizes="(max-width: 768px) 100vw, 448px"
-              className="w-full rounded-lg"
-              priority
-            />
-          </div>
-          <div className="text-center">
-            <h1 className="text-2xl font-bold text-foreground">
-              Sistema de Gestão do Bloco Cirúrgico
-            </h1>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Faça login para acessar o sistema
-            </p>
-          </div>
+        <DemoLogo />
+        <div className="text-center">
+          <p className="text-sm text-muted-foreground">
+            Faça login para acessar o sistema
+          </p>
         </div>
 
         {/* Card de Login */}
@@ -122,7 +108,7 @@ export default function LoginPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="seu.email@clinicalavinsky.com.br"
+                  placeholder="seu.email@demo.surgischeduler.app"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -178,8 +164,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="text-center text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Clínica Lavinsky. Todos os direitos
-            reservados.
+            © {new Date().getFullYear()} SurgiScheduler Demo. Projeto de portfólio.
           </p>
           <p className="mt-1">
             Sistema seguro e em conformidade com LGPD/HIPAA

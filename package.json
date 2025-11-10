@@ -4,8 +4,8 @@
   "description": "Complete surgical center management system - Demo version for portfolio. Features: Next.js 15, React 19, TypeScript, Supabase, role-based access control, real-time scheduling, comprehensive testing.",
   "author": {
     "name": "Joelson Lopes",
-    "email": "dev@joelsonlopes.dev",
-    "url": "https://joelsonlopes.dev"
+    "email": "joelsonlopes85@gmail.com",
+    "url": "https://portfolio-joelson-lopes.vercel.app/"
   },
   "repository": {
     "type": "git",

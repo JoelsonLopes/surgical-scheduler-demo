@@ -16,6 +16,7 @@ import { Label } from '@/components/ui/label'
 import { toast } from 'sonner'
 import { Eye, EyeOff, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
+import { DemoLogo } from '@/components/DemoLogo'
 
 export default function ChangePasswordPage() {
   const router = useRouter()
@@ -142,16 +143,7 @@ export default function ChangePasswordPage() {
       <div className="w-full max-w-md space-y-8">
         {/* Logo */}
         <div className="flex flex-col items-center justify-center space-y-4">
-          <div className="relative h-24 w-full overflow-hidden rounded-lg">
-            <Image
-              src="/logo-lavinsky.jpg"
-              alt="Clínica Lavinsky"
-              fill
-              sizes="(max-width: 768px) 100vw, 448px"
-              className="w-full rounded-lg"
-              priority
-            />
-          </div>
+        <DemoLogo />
           <div className="text-center">
             <div className="mb-4 flex justify-center">
               <div className="rounded-full bg-primary/10 p-3">
@@ -276,7 +268,7 @@ export default function ChangePasswordPage() {
         {/* Footer */}
         <div className="text-center text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Clínica Lavinsky. Todos os direitos
+            © {new Date().getFullYear()} SurgiScheduler Demo. Todos os direitos
             reservados.
           </p>
           <p className="mt-1">

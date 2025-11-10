@@ -1,11 +1,11 @@
 'use client'
 
 import { Calendar, Users } from 'lucide-react'
-import Image from 'next/image'
 import * as React from 'react'
 
 import { NavMain } from '@/components/nav-main'
 import { NavUser } from '@/components/nav-user'
+import { DemoLogo } from '@/components/DemoLogo'
 import {
   Sidebar,
   SidebarContent,
@@ -59,21 +59,7 @@ export function AppSidebar({
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <a href="/dashboard/schedules">
-                <div className="flex aspect-square size-8 items-center justify-center">
-                  <Image
-                    src="/logo-header.png"
-                    alt="Clínica Lavinsky"
-                    width={32}
-                    height={32}
-                    className="rounded-lg"
-                  />
-                </div>
-                <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">
-                    Clínica Lavinsky
-                  </span>
-                  <span className="truncate text-xs">Bloco Cirúrgico</span>
-                </div>
+                <DemoLogo variant="compact" />
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>
