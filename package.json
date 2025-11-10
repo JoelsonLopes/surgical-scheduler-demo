@@ -1,6 +1,27 @@
 {
-  "name": "next-temp",
-  "version": "0.1.0",
+  "name": "surgical-scheduler-demo",
+  "version": "1.0.0",
+  "description": "Complete surgical center management system - Demo version for portfolio. Features: Next.js 15, React 19, TypeScript, Supabase, role-based access control, real-time scheduling, comprehensive testing.",
+  "author": {
+    "name": "Joelson Lopes",
+    "email": "dev@joelsonlopes.dev",
+    "url": "https://joelsonlopes.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoelsonLopes/surgical-scheduler-demo.git"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "supabase",
+    "healthcare",
+    "scheduling",
+    "full-stack",
+    "portfolio",
+    "demo"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
