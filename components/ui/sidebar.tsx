@@ -309,16 +309,16 @@ function SidebarRail({ className, ...props }: React.ComponentProps<'button'>) {
 }
 
 function SidebarInset({ className, ...props }: React.ComponentProps<'main'>) {
-  const { open, isMobile } = useSidebar()
+  const { openMobile, isMobile } = useSidebar()
 
   return (
     <>
-      {/* Overlay escuro quando sidebar está aberta (desktop) */}
-      {!isMobile && open && (
+      {/* Overlay escuro apenas em mobile quando sidebar está aberta */}
+      {isMobile && openMobile && (
         <div
-          className="fixed inset-0 z-[5] bg-black/50 transition-opacity md:block"
+          className="fixed inset-0 z-[5] bg-black/50 transition-opacity"
           onClick={() => {
-            // Previne fechar no desktop - apenas visual
+            // Overlay clicável em mobile para fechar sidebar
           }}
         />
       )}
