@@ -386,81 +386,85 @@ export default function SchedulesPage() {
   }
 
   return (
-    <div className="container mx-auto py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">Agenda Cirúrgica</h1>
-        <p className="text-muted-foreground">
-          Selecione uma data e um horário para criar um novo agendamento.
-        </p>
-      </div>
+    <div className="flex flex-1 flex-col overflow-auto">
+      <div className="container mx-auto max-w-7xl space-y-8 p-8">
+        <div className="space-y-2">
+          <h1 className="text-3xl font-bold tracking-tight">
+            Agenda Cirúrgica
+          </h1>
+          <p className="text-muted-foreground">
+            Selecione uma data e um horário para criar um novo agendamento.
+          </p>
+        </div>
 
-      <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
-        <SchedulingTimeSlotPicker
-          onDateSelect={handleDateSelect}
-          onTimeSelect={handleTimeSelect}
-          refreshTrigger={refreshTrigger}
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+          <SchedulingTimeSlotPicker
+            onDateSelect={handleDateSelect}
+            onTimeSelect={handleTimeSelect}
+            refreshTrigger={refreshTrigger}
+          />
+
+          <div className="flex h-[490px] w-full flex-col lg:w-[380px] lg:flex-shrink-0">
+            <h3 className="mb-4 flex-shrink-0 text-lg font-semibold">
+              Próximos Agendamentos (
+              {
+                appointmentsWithPatients.filter((apt) => {
+                  const startDateTime = new Date(apt.start_date_time)
+                  return (
+                    startDateTime >= new Date() ||
+                    new Date(startDateTime).toDateString() ===
+                      new Date().toDateString()
+                  )
+                }).length
+              }
+              )
+            </h3>
+            <UpcomingAppointmentsList
+              appointments={appointmentsWithPatients}
+              maxItems={5}
+            />
+          </div>
+        </div>
+
+        <AppointmentRequestModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={handleSubmit}
+          isLoading={isLoading}
+          selectedDate={selectedDate}
+          selectedTime={selectedTime}
+          initialData={getInitialData()}
+          mode={modalMode}
+          onDelete={handleDelete}
+          canDelete={editingAppointment?.status === 'PENDING'}
         />
 
-        <div className="flex h-[490px] w-full flex-col lg:w-[380px] lg:flex-shrink-0">
-          <h3 className="mb-4 flex-shrink-0 text-lg font-semibold">
-            Próximos Agendamentos (
-            {
-              appointmentsWithPatients.filter((apt) => {
-                const startDateTime = new Date(apt.start_date_time)
-                return (
-                  startDateTime >= new Date() ||
-                  new Date(startDateTime).toDateString() ===
-                    new Date().toDateString()
-                )
-              }).length
-            }
-            )
-          </h3>
-          <UpcomingAppointmentsList
-            appointments={appointmentsWithPatients}
-            maxItems={5}
+        {/* Admin Panel - Only visible for ADMIN users */}
+        {isAdmin && (
+          <div>
+            <AdminSchedulingPanel
+              onViewDetails={handleViewDetails}
+              onApprove={handleApprove}
+              onReject={handleReject}
+              onEdit={handleEdit}
+              refreshTrigger={adminRefreshTrigger}
+            />
+          </div>
+        )}
+
+        {/* Admin Details Modal */}
+        {isAdmin && selectedAdminAppointment && (
+          <AppointmentDetailsModal
+            appointment={selectedAdminAppointment}
+            isOpen={isDetailsModalOpen}
+            onClose={() => {
+              setIsDetailsModalOpen(false)
+              setSelectedAdminAppointment(null)
+            }}
+            onRefresh={handleAdminRefresh}
           />
-        </div>
+        )}
       </div>
-
-      <AppointmentRequestModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        onSubmit={handleSubmit}
-        isLoading={isLoading}
-        selectedDate={selectedDate}
-        selectedTime={selectedTime}
-        initialData={getInitialData()}
-        mode={modalMode}
-        onDelete={handleDelete}
-        canDelete={editingAppointment?.status === 'PENDING'}
-      />
-
-      {/* Admin Panel - Only visible for ADMIN users */}
-      {isAdmin && (
-        <div className="mt-12">
-          <AdminSchedulingPanel
-            onViewDetails={handleViewDetails}
-            onApprove={handleApprove}
-            onReject={handleReject}
-            onEdit={handleEdit}
-            refreshTrigger={adminRefreshTrigger}
-          />
-        </div>
-      )}
-
-      {/* Admin Details Modal */}
-      {isAdmin && selectedAdminAppointment && (
-        <AppointmentDetailsModal
-          appointment={selectedAdminAppointment}
-          isOpen={isDetailsModalOpen}
-          onClose={() => {
-            setIsDetailsModalOpen(false)
-            setSelectedAdminAppointment(null)
-          }}
-          onRefresh={handleAdminRefresh}
-        />
-      )}
     </div>
   )
 }

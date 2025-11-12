@@ -106,139 +106,147 @@ export default function UsersPage() {
   }
 
   return (
-    <div className="container mx-auto py-8">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">Gestão de Usuários</h1>
-        <p className="text-muted-foreground">
-          Gerencie usuários do sistema de bloco cirúrgico
-        </p>
-      </div>
-
-      {/* Filters Section */}
-      <div className="mb-6 rounded-lg border bg-card p-6">
-        <h2 className="mb-4 text-lg font-semibold">Filtros</h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {/* Search */}
-          <div className="space-y-2">
-            <Label htmlFor="search">Buscar Usuário</Label>
-            <Input
-              id="search"
-              placeholder="Nome do usuário..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-
-          {/* Role Filter */}
-          <div className="space-y-2">
-            <Label htmlFor="role">Tipo de Usuário</Label>
-            <Select
-              value={roleFilter}
-              onValueChange={(value) =>
-                setRoleFilter(value as UserRole | 'all')
-              }
-            >
-              <SelectTrigger id="role">
-                <SelectValue placeholder="Selecione o tipo" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">Todos</SelectItem>
-                <SelectItem value={UserRole.ADMIN}>Administradores</SelectItem>
-                <SelectItem value={UserRole.DOCTOR}>Médicos</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-end gap-2">
-            <Button
-              onClick={handleClearFilters}
-              variant="outline"
-              className="flex-1"
-            >
-              Limpar Filtros
-            </Button>
-          </div>
+    <div className="flex flex-1 flex-col overflow-auto">
+      <div className="container mx-auto max-w-7xl space-y-8 p-8">
+        {/* Header */}
+        <div className="space-y-2">
+          <h1 className="text-3xl font-bold tracking-tight">
+            Gestão de Usuários
+          </h1>
+          <p className="text-muted-foreground">
+            Gerencie usuários do sistema de bloco cirúrgico
+          </p>
         </div>
-      </div>
 
-      {/* Action Buttons */}
-      <div className="mb-4 flex items-center justify-between">
-        <p className="text-sm text-muted-foreground">
-          {users.length} usuário(s) encontrado(s)
-        </p>
-        <Button onClick={() => setIsCreateDialogOpen(true)}>
-          <UserPlus className="mr-2 h-4 w-4" />
-          Novo Usuário
-        </Button>
-      </div>
-
-      {/* User List */}
-      {loading ? (
-        <div className="flex h-64 items-center justify-center rounded-lg border bg-card">
-          <div className="text-center">
-            <div className="mb-2 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
-            <p className="text-muted-foreground">Carregando usuários...</p>
-          </div>
-        </div>
-      ) : (
-        <UserList
-          key={listKey}
-          users={users}
-          onEdit={handleEditClick}
-          onDelete={handleDeleteUser}
-        />
-      )}
-
-      {/* Create Dialog */}
-      <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-        <DialogContent className="max-w-2xl">
-          <DialogHeader>
-            <DialogTitle>Criar Novo Usuário</DialogTitle>
-            <DialogDescription>
-              Preencha os dados do novo usuário do sistema
-            </DialogDescription>
-          </DialogHeader>
-          <UserForm
-            onSubmit={handleCreateUser}
-            onCancel={() => setIsCreateDialogOpen(false)}
-            isLoading={creating}
-          />
-        </DialogContent>
-      </Dialog>
-
-      {/* Edit Dialog */}
-      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-        <DialogContent className="max-h-[80vh] max-w-3xl overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>Editar Usuário</DialogTitle>
-            <DialogDescription>Atualize os dados do usuário</DialogDescription>
-          </DialogHeader>
-          {selectedUser && (
-            <UserForm
-              user={selectedUser}
-              onSubmit={handleEditUser}
-              onCancel={() => {
-                setIsEditDialogOpen(false)
-                setSelectedUser(null)
-              }}
-              isLoading={updating}
-            />
-          )}
-          {selectedUser && (
-            <div className="mt-6 border-t pt-6">
-              <h3 className="mb-4 text-lg font-medium">
-                Ações Administrativas
-              </h3>
-              <UserActions
-                user={selectedUser}
-                onActionComplete={handleActionAndRefetch}
+        {/* Filters Section */}
+        <div className="rounded-lg border bg-card p-6">
+          <h2 className="mb-4 text-lg font-semibold">Filtros</h2>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+            {/* Search */}
+            <div className="space-y-2">
+              <Label htmlFor="search">Buscar Usuário</Label>
+              <Input
+                id="search"
+                placeholder="Nome do usuário..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-          )}
-        </DialogContent>
-      </Dialog>
+
+            {/* Role Filter */}
+            <div className="space-y-2">
+              <Label htmlFor="role">Tipo de Usuário</Label>
+              <Select
+                value={roleFilter}
+                onValueChange={(value) =>
+                  setRoleFilter(value as UserRole | 'all')
+                }
+              >
+                <SelectTrigger id="role">
+                  <SelectValue placeholder="Selecione o tipo" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">Todos</SelectItem>
+                  <SelectItem value={UserRole.ADMIN}>
+                    Administradores
+                  </SelectItem>
+                  <SelectItem value={UserRole.DOCTOR}>Médicos</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-end gap-2">
+              <Button
+                onClick={handleClearFilters}
+                variant="outline"
+                className="flex-1"
+              >
+                Limpar Filtros
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex items-center justify-between">
+          <p className="text-sm text-muted-foreground">
+            {users.length} usuário(s) encontrado(s)
+          </p>
+          <Button onClick={() => setIsCreateDialogOpen(true)}>
+            <UserPlus className="mr-2 h-4 w-4" />
+            Novo Usuário
+          </Button>
+        </div>
+
+        {/* User List */}
+        {loading ? (
+          <div className="flex h-64 items-center justify-center rounded-lg border bg-card">
+            <div className="text-center">
+              <div className="mb-2 h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+              <p className="text-muted-foreground">Carregando usuários...</p>
+            </div>
+          </div>
+        ) : (
+          <UserList
+            key={listKey}
+            users={users}
+            onEdit={handleEditClick}
+            onDelete={handleDeleteUser}
+          />
+        )}
+
+        {/* Create Dialog */}
+        <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
+          <DialogContent className="max-w-2xl">
+            <DialogHeader>
+              <DialogTitle>Criar Novo Usuário</DialogTitle>
+              <DialogDescription>
+                Preencha os dados do novo usuário do sistema
+              </DialogDescription>
+            </DialogHeader>
+            <UserForm
+              onSubmit={handleCreateUser}
+              onCancel={() => setIsCreateDialogOpen(false)}
+              isLoading={creating}
+            />
+          </DialogContent>
+        </Dialog>
+
+        {/* Edit Dialog */}
+        <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+          <DialogContent className="max-h-[80vh] max-w-3xl overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>Editar Usuário</DialogTitle>
+              <DialogDescription>
+                Atualize os dados do usuário
+              </DialogDescription>
+            </DialogHeader>
+            {selectedUser && (
+              <UserForm
+                user={selectedUser}
+                onSubmit={handleEditUser}
+                onCancel={() => {
+                  setIsEditDialogOpen(false)
+                  setSelectedUser(null)
+                }}
+                isLoading={updating}
+              />
+            )}
+            {selectedUser && (
+              <div className="mt-6 border-t pt-6">
+                <h3 className="mb-4 text-lg font-medium">
+                  Ações Administrativas
+                </h3>
+                <UserActions
+                  user={selectedUser}
+                  onActionComplete={handleActionAndRefetch}
+                />
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   )
 }
