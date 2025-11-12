@@ -1,8 +1,8 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { renderHook, act } from '@testing-library/react'
 import { useUserActions } from '@/hooks/useUserActions'
-import { UserRole } from '@/types'
 import { createClient } from '@/lib/supabase/client'
+import { UserRole } from '@/types'
+import { act, renderHook } from '@testing-library/react'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 // Mock Supabase and audit logger
 vi.mock('@/lib/supabase/client', () => ({
@@ -46,8 +46,7 @@ describe('useUserActions', () => {
       ok: true,
       json: async () => ({
         user: mockUser,
-        message:
-          'User created successfully with default password: Demo@2024!',
+        message: 'User created successfully with default password: Demo@2024!',
       }),
     })
 

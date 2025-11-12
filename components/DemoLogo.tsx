@@ -1,11 +1,12 @@
-import React from 'react'
-
 interface DemoLogoProps {
   variant?: 'default' | 'compact'
   className?: string
 }
 
-export function DemoLogo({ variant = 'default', className = '' }: DemoLogoProps) {
+export function DemoLogo({
+  variant = 'default',
+  className = '',
+}: DemoLogoProps) {
   if (variant === 'compact') {
     return (
       <div className={`flex items-center gap-2 ${className}`}>
@@ -26,7 +27,9 @@ export function DemoLogo({ variant = 'default', className = '' }: DemoLogoProps)
         </div>
         <div className="flex flex-col">
           <span className="text-sm font-bold leading-none">SurgiScheduler</span>
-          <span className="text-xs text-muted-foreground leading-none">DEMO</span>
+          <span className="text-xs leading-none text-muted-foreground">
+            DEMO
+          </span>
         </div>
       </div>
     )

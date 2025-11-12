@@ -1,5 +1,6 @@
 'use client'
 
+import { DemoLogo } from '@/components/DemoLogo'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -10,8 +11,6 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import Image from 'next/image'
-import { DemoLogo } from '@/components/DemoLogo'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -71,7 +70,7 @@ export default function RecuperarSenhaPage() {
       <div className="w-full max-w-md space-y-8">
         {/* Logo */}
         <div className="flex flex-col items-center justify-center space-y-4">
-        <DemoLogo />
+          <DemoLogo />
           <div className="text-center">
             <h1 className="text-2xl font-bold text-foreground">
               Sistema de Gestão do Bloco Cirúrgico
@@ -158,9 +157,7 @@ export default function RecuperarSenhaPage() {
                       </span>
                       <span>
                         Use a senha padrão:{' '}
-                        <strong className="text-foreground">
-                          Demo@2024!
-                        </strong>
+                        <strong className="text-foreground">Demo@2024!</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">

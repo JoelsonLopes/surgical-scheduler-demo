@@ -1,10 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
+import { DemoLogo } from '@/components/DemoLogo'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import {
   Card,
   CardContent,
@@ -12,11 +9,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { toast } from 'sonner'
+import { createClient } from '@/lib/supabase/client'
 import { Eye, EyeOff, ShieldCheck } from 'lucide-react'
-import Image from 'next/image'
-import { DemoLogo } from '@/components/DemoLogo'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
+import { toast } from 'sonner'
 
 export default function ChangePasswordPage() {
   const router = useRouter()
@@ -143,7 +142,7 @@ export default function ChangePasswordPage() {
       <div className="w-full max-w-md space-y-8">
         {/* Logo */}
         <div className="flex flex-col items-center justify-center space-y-4">
-        <DemoLogo />
+          <DemoLogo />
           <div className="text-center">
             <div className="mb-4 flex justify-center">
               <div className="rounded-full bg-primary/10 p-3">

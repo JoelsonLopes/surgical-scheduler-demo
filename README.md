@@ -35,6 +35,7 @@
 ## 🚀 Stack Tecnológica
 
 ### Frontend
+
 - **Next.js 15** (App Router) - Framework React com componentes de servidor
 - **React 19** - Última versão do React com recursos concorrentes
 - **TypeScript 5** - Desenvolvimento type-safe
@@ -43,12 +44,14 @@
 - **FullCalendar** - Interface interativa de agendamento
 
 ### Backend & Banco de Dados
+
 - **Supabase** - Banco PostgreSQL com subscrições em tempo real
 - **Row Level Security (RLS)** - Controle de acesso em nível de banco
 - **Supabase Auth** - Autenticação baseada em JWT
 - **Supabase Storage** - Armazenamento de documentos com políticas de acesso
 
 ### Quality Assurance
+
 - **Vitest** - Testes unitários e de integração rápidos
 - **Testing Library** - Testes de componentes
 - **ESLint** - Linting de código com regras estritas
@@ -57,6 +60,7 @@
 - **TypeScript Strict Mode** - Máxima segurança de tipos
 
 ### DevOps
+
 - **Vercel** - Deploy em produção (projeto original)
 - **GitHub Actions** - Pipeline CI/CD pronto
 - **Conventional Commits** - Mensagens de commit padronizadas
@@ -66,6 +70,7 @@
 ## 🎓 O Que Este Projeto Demonstra
 
 ### 🏗️ **Arquitetura & Design**
+
 - Clean Architecture com separação de responsabilidades
 - Princípios SOLID ao longo da base de código
 - Abordagem Domain-Driven Design (DDD)
@@ -73,6 +78,7 @@
 - Handlers de rotas API com tratamento adequado de erros
 
 ### 🔒 **Melhores Práticas de Segurança**
+
 - Row Level Security (RLS) para isolamento de dados
 - Proteção de Service Role Key (apenas server-side)
 - Rate limiting em endpoints críticos
@@ -81,6 +87,7 @@
 - Políticas de senha seguras com mudanças forçadas
 
 ### ✅ **Qualidade & Testes**
+
 - 128 testes automatizados (unit, integration, component)
 - Pipeline QA abrangente (format → lint → type-check → test)
 - Git hooks de pre-commit e pre-push
@@ -88,6 +95,7 @@
 - Vitest UI para debug interativo de testes
 
 ### 📊 **Funcionalidades do Mundo Real**
+
 - Gerenciamento de estado complexo
 - Upload e armazenamento de arquivos
 - Detecção de conflitos em tempo real
@@ -107,12 +115,14 @@
 ## 🔑 Credenciais Demo
 
 **Conta Admin:**
+
 ```
 Email: admin@demo.surgischeduler.app
 Senha: Demo@2024!
 ```
 
 **Conta Médico:**
+
 ```
 Email: doctor@demo.surgischeduler.app
 Senha: Demo@2024!
@@ -125,6 +135,7 @@ Senha: Demo@2024!
 ## 🛠️ Instalação Local
 
 ### Pré-requisitos
+
 - Node.js 18+ (recomendado: v22.19.0)
 - npm ou yarn
 - Conta Supabase (tier gratuito funciona)
@@ -183,6 +194,7 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador.
 ## 📦 Scripts Disponíveis
 
 ### Desenvolvimento
+
 ```bash
 npm run dev          # Iniciar servidor de desenvolvimento
 npm run build        # Build para produção
@@ -190,6 +202,7 @@ npm run start        # Iniciar servidor de produção
 ```
 
 ### Quality Assurance
+
 ```bash
 # Testes
 npm test             # Executar testes em modo watch
@@ -238,6 +251,7 @@ npm run ci           # Pipeline QA + build (CI/CD)
 ## 🎯 Funcionalidades Principais
 
 ### 👥 Gestão de Usuários
+
 - Operações CRUD completas
 - Permissões baseadas em roles (Admin/Médico)
 - Gerenciamento de senhas com reset forçado
@@ -246,6 +260,7 @@ npm run ci           # Pipeline QA + build (CI/CD)
 - Filtros avançados e busca
 
 ### 📅 Sistema de Agendamento
+
 - Interface de calendário interativa
 - Detecção automática de conflitos
 - Validação de slots de tempo
@@ -254,12 +269,14 @@ npm run ci           # Pipeline QA + build (CI/CD)
 - Verificação de disponibilidade em tempo real
 
 ### 📄 Gestão de Documentos
+
 - Upload seguro de arquivos para Supabase Storage
 - Controle de acesso via políticas RLS
 - Preview e download de arquivos
 - Rastreamento de metadados
 
 ### 🔐 Recursos de Segurança
+
 - Autenticação JWT via Supabase Auth
 - Row Level Security (RLS) em todas as tabelas
 - Isolamento de Service Role Key
@@ -272,12 +289,14 @@ npm run ci           # Pipeline QA + build (CI/CD)
 ## 🧪 Estratégia de Testes
 
 ### Cobertura de Testes
+
 - **128 testes** cobrindo funcionalidade crítica
 - **Testes unitários** para utilitários e validações
 - **Testes de integração** para rotas API e operações de banco
 - **Testes de componentes** para interações de UI
 
 ### Estrutura de Testes
+
 ```
 test/
 ├── unit/              # Testes de utilitários e validações
@@ -287,6 +306,7 @@ test/
 ```
 
 ### Executar Testes
+
 ```bash
 # Modo watch (desenvolvimento)
 npm test
@@ -306,18 +326,21 @@ npm run test:coverage
 ## 🏗️ Padrões de Desenvolvimento
 
 ### Estilo de Código
+
 - **Variáveis/Funções:** `camelCase`
 - **Classes/Interfaces:** `PascalCase`
 - **Constantes:** `UPPER_SNAKE_CASE`
 - **Arquivos:** `PascalCase.tsx` para componentes, `camelCase.ts` para utilitários
 
 ### Princípios
+
 - **SOLID** - Design orientado a objetos manutenível
 - **DRY** - Don't Repeat Yourself
 - **KISS** - Keep It Simple, Stupid
 - **Clean Code** - Código legível e auto-documentado
 
 ### Convenção de Commits
+
 ```
 feat: Adicionar nova funcionalidade
 fix: Corrigir bug
@@ -344,6 +367,7 @@ chore: Tarefas de manutenção
 **Joelson Lopes** - Desenvolvedor Full-Stack
 
 Este projeto demonstra:
+
 - ✅ Desenvolvimento TypeScript full-stack
 - ✅ Padrões modernos do React e melhores práticas
 - ✅ Design e otimização de banco de dados
@@ -353,6 +377,7 @@ Este projeto demonstra:
 - ✅ Experiência com deploy pronto para produção
 
 **Conecte-se:**
+
 - 🌐 Portfolio: [joelsonlopes.dev](https://joelsonlopes.dev)
 - 💼 LinkedIn: [linkedin.com/in/joelsonlopes](https://linkedin.com/in/joelsonlopes)
 - 📧 Email: dev@joelsonlopes.dev
@@ -363,6 +388,7 @@ Este projeto demonstra:
 ## 📄 Documentação
 
 Documentação adicional disponível em `/docs`:
+
 - [Guia de Quality Assurance](./docs/QA.md)
 - [Configuração do Sistema de Senhas](./docs/DEFAULT_PASSWORD_SETUP.md)
 - [Estrutura do Projeto](./docs/ESTRUTURA_PROJETO.md)
@@ -377,11 +403,13 @@ Documentação adicional disponível em `/docs`:
 Este projeto é uma versão de demonstração criada para fins de portfólio.
 
 **Permissões:**
+
 - ✅ Visualizar e revisar código
 - ✅ Referenciar em discussões técnicas
 - ✅ Usar como exemplo para aprendizado
 
 **Restrições:**
+
 - ❌ Uso comercial sem permissão
 - ❌ Redistribuição
 - ❌ Deploy em produção sem autorização

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { DemoLogo } from '@/components/DemoLogo'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -14,8 +14,8 @@ import { Label } from '@/components/ui/label'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
 import { toast } from 'sonner'
-import { DemoLogo } from '@/components/DemoLogo'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -164,7 +164,8 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="text-center text-xs text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} SurgiScheduler Demo. Projeto de portfólio.
+            © {new Date().getFullYear()} SurgiScheduler Demo. Projeto de
+            portfólio.
           </p>
           <p className="mt-1">
             Sistema seguro e em conformidade com LGPD/HIPAA
