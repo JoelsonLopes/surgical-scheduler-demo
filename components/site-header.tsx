@@ -1,7 +1,7 @@
 'use client'
 
+import { DemoLogo } from '@/components/DemoLogo'
 import { PanelLeft } from 'lucide-react'
-import { DemoLogo } from "@/components/DemoLogo"
 
 import {
   Breadcrumb,
@@ -28,9 +28,10 @@ export function SiteHeader({ breadcrumbs }: SiteHeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 flex w-full items-center border-b bg-background">
-      <div className="flex h-14 w-full items-center gap-2 px-4">
+      <div className="flex h-14 w-full items-center gap-4 px-4">
+        {/* Botão toggle apenas em mobile */}
         <Button
-          className="h-8 w-8"
+          className="h-8 w-8 md:hidden"
           variant="ghost"
           size="icon"
           onClick={toggleSidebar}
@@ -39,18 +40,12 @@ export function SiteHeader({ breadcrumbs }: SiteHeaderProps) {
           <span className="sr-only">Abrir/Fechar Menu</span>
         </Button>
 
-        {/* Logo e nome - visível em todas as telas */}
+        {/* Logo compacto - visível em todas as telas */}
         <div className="flex items-center gap-2">
           <DemoLogo variant="compact" />
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold">SurgiScheduler Demo</span>
-            <span className="text-xs text-muted-foreground">
-              Bloco Cirúrgico
-            </span>
-          </div>
         </div>
 
-        <Separator orientation="vertical" className="mr-2 h-4" />
+        <Separator orientation="vertical" className="h-4" />
         {breadcrumbs && breadcrumbs.length > 0 && (
           <Breadcrumb className="hidden sm:block">
             <BreadcrumbList>
