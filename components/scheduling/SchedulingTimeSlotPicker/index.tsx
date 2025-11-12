@@ -1,6 +1,6 @@
 'use client'
 
-import { Calendar } from '@/components/ui/calendar'
+import { Calendar, CalendarDayButton } from '@/components/ui/calendar'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { useMonthAppointments } from '@/hooks/useMonthAppointments'
 import { useAppointments, type Appointment } from '@/hooks/useAppointments'
@@ -8,7 +8,7 @@ import { generateTimeSlots } from '@/lib/utils/timeSlots'
 import { format, startOfMonth } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import * as React from 'react'
-import { DayButton, type DayButtonProps } from 'react-day-picker'
+import { type DayButtonProps } from 'react-day-picker'
 import { TIME_SLOT_CONFIG } from './constants'
 import { AppointmentSlot } from './AppointmentSlot'
 import { AvailableSlot } from './AvailableSlot'
@@ -127,7 +127,7 @@ export function SchedulingTimeSlotPicker({
 
   /**
    * Custom DayButton component with appointment count badges
-   * Uses DayButton instead of Day to avoid hydration errors with table structure
+   * Uses CalendarDayButton to maintain proper selection styling
    */
   const CustomDayButton = React.useCallback(
     (props: DayButtonProps) => {
@@ -136,18 +136,16 @@ export function SchedulingTimeSlotPicker({
       const count = dayAppointments?.length || 0
 
       return (
-        <div className="relative flex h-full w-full items-center justify-center">
-          <DayButton {...props}>
-            <span className="relative inline-flex items-start text-sm font-medium">
-              {props.day.date.getDate()}
-              {count > 0 && (
-                <span className="ml-0.5 flex h-3.5 min-w-[14px] items-center justify-center rounded-full bg-primary px-1 text-[9px] font-bold leading-none text-primary-foreground">
-                  {count}
-                </span>
-              )}
-            </span>
-          </DayButton>
-        </div>
+        <CalendarDayButton {...props}>
+          <span className="relative inline-flex items-start text-sm font-medium">
+            {props.day.date.getDate()}
+            {count > 0 && (
+              <span className="ml-0.5 flex h-3.5 min-w-[14px] items-center justify-center rounded-full bg-primary px-1 text-[9px] font-bold leading-none text-primary-foreground">
+                {count}
+              </span>
+            )}
+          </span>
+        </CalendarDayButton>
       )
     },
     [appointmentsByDay]
