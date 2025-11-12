@@ -53,7 +53,7 @@ export function AppSidebar({
   }, [permissions.isAdmin, loading])
 
   return (
-    <Sidebar collapsible="offcanvas" {...props}>
+    <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
