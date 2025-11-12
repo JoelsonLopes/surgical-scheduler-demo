@@ -49,6 +49,13 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url)
   }
 
+  // Redirect /dashboard to /dashboard/schedules
+  if (user && request.nextUrl.pathname === '/dashboard') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard/schedules'
+    return NextResponse.redirect(url)
+  }
+
   // Check if user needs to change password (first login)
   if (user && !isPublicRoute && !isChangePasswordPage) {
     const { data: userData } = await supabase

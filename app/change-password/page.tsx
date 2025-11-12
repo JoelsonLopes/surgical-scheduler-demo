@@ -49,8 +49,8 @@ export default function ChangePasswordPage() {
         .single()
 
       if (userData && !userData.force_password_change) {
-        // User doesn't need to change password, redirect to dashboard
-        router.push('/dashboard')
+        // User doesn't need to change password, redirect to schedules
+        router.push('/dashboard/schedules')
       }
     }
 
@@ -124,9 +124,9 @@ export default function ChangePasswordPage() {
 
       toast.success('Senha alterada com sucesso!')
 
-      // Redirect to dashboard
+      // Redirect to schedules page
       setTimeout(() => {
-        router.push('/dashboard')
+        router.push('/dashboard/schedules')
         router.refresh()
       }, 1500)
     } catch (error) {
