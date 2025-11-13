@@ -1,0 +1,61 @@
+name: Check AI Signatures
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  check-commits:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Check for AI signatures in commits
+      run: |
+        echo "🤖 Checking commit messages for AI signatures..."
+        
+        # Get list of commits in this push
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          COMMITS=$(git log --format=%H origin/${{ github.base_ref }}..HEAD)
+        else
+          COMMITS=$(git log --format=%H -1)
+        fi
+        
+        # Check each commit message
+        for commit in $COMMITS; do
+          MESSAGE=$(git log --format=%B -n 1 $commit)
+          
+          if echo "$MESSAGE" | grep -qE "(🤖|Generated with.*Claude|Co-Authored-By:.*Claude|Co-Authored-By:.*AI|Assisted by.*AI|With the help of Claude)"; then
+            echo ""
+            echo "❌❌❌ CI CHECK FAILED ❌❌❌"
+            echo ""
+            echo "🚫 Commit $commit contém assinatura de IA!"
+            echo ""
+            echo "Commit message:"
+            echo "$MESSAGE"
+            echo ""
+            exit 1
+          fi
+        done
+        
+        echo "✅ All commits are clean!"
+    
+    - name: Check for AI signatures in code
+      run: |
+        echo "📝 Checking code files for AI signatures..."
+        
+        if git diff origin/${{ github.base_ref }} HEAD | grep -qE "(🤖|Generated with.*Claude|Co-Authored-By:.*Claude|Assisted by.*AI)"; then
+          echo ""
+          echo "❌❌❌ CI CHECK FAILED ❌❌❌"
+          echo ""
+          echo "🚫 Detectadas assinaturas de IA no código!"
+          echo ""
+          exit 1
+        fi
+        
+        echo "✅ Code is clean!"

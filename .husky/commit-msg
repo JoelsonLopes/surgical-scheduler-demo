@@ -14,10 +14,23 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Checagem de assinaturas de IA proibidas
-if grep -q "🤖 Generated with \[Claude Code\]" "$1" || grep -q "Co-Authored-By: Claude <noreply@anthropic.com>" "$1"; then
-  echo "❌ Commits com assinatura de IA não são permitidos."
-  echo "   Remova qualquer referência a Claude Code ou Co-Authored-By: Claude."
+# Checagem de assinaturas de IA proibidas (mesma validação do CI)
+if grep -qE "(🤖|Generated with.*Claude|Co-Authored-By:.*Claude|Co-Authored-By:.*AI|Assisted by.*AI|With the help of Claude)" "$1"; then
+  echo ""
+  echo "❌❌❌ COMMIT BLOQUEADO ❌❌❌"
+  echo ""
+  echo "🚫 Assinaturas de IA não são permitidas neste projeto!"
+  echo ""
+  echo "Padrões bloqueados detectados:"
+  echo "  • Emoji de robô (🤖)"
+  echo "  • 'Generated with Claude/AI'"
+  echo "  • 'Co-Authored-By: Claude'"
+  echo "  • 'Co-Authored-By: AI'"
+  echo "  • 'Assisted by AI'"
+  echo "  • 'With the help of Claude'"
+  echo ""
+  echo "💡 Remova TODAS as referências a IA antes de commitar."
+  echo ""
   exit 1
 fi
 
