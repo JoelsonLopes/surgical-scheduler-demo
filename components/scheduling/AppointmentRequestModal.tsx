@@ -39,7 +39,7 @@ export function AppointmentRequestModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-h-[80vh] max-w-3xl overflow-y-auto">
+      <DialogContent className="max-h-[80vh] !w-auto !max-w-[80vw] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>
             {mode === 'edit' ? 'Editar Agendamento' : 'Solicitar Agendamento'}

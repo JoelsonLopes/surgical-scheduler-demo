@@ -198,7 +198,7 @@ export default function UsersPage() {
 
         {/* Create Dialog */}
         <Dialog open={isCreateDialogOpen} onOpenChange={setIsCreateDialogOpen}>
-          <DialogContent className="max-w-2xl">
+          <DialogContent className="max-h-[80vh] !w-auto !max-w-[80vw] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Criar Novo Usuário</DialogTitle>
               <DialogDescription>
@@ -215,7 +215,7 @@ export default function UsersPage() {
 
         {/* Edit Dialog */}
         <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
-          <DialogContent className="max-h-[80vh] max-w-3xl overflow-y-auto">
+          <DialogContent className="max-h-[80vh] !w-auto !max-w-[80vw] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Editar Usuário</DialogTitle>
               <DialogDescription>

@@ -157,7 +157,7 @@ export function AppointmentDetailsModal({
   return (
     <>
       <Dialog open={isOpen} onOpenChange={onClose}>
-        <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+        <DialogContent className="max-h-[90vh] !w-auto !max-w-[80vw] overflow-y-auto">
           <DialogHeader>
             <div className="flex items-start justify-between">
               <div>
